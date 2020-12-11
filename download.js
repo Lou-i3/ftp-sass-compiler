@@ -8,7 +8,7 @@ config = new Object();
 getCongig();
 
 // Local
-const localPath = './files/';
+const localPath = __dirname + '/files/';
 const localPathSASS = localPath + "sass/";
 const localPathCSS = localPath + "css/";
 

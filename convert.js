@@ -4,7 +4,7 @@ const fs = require('fs');
 var sass = require('sass');
 
 // Local
-const localPath = './files/';
+const localPath = __dirname + '/files/';
 const localPathSASS = localPath + "sass/";
 const localPathCSS = localPath + "css/";
 
