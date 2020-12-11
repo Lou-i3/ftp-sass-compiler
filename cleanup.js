@@ -12,7 +12,7 @@ console.log('\n # # # cleanup.js # # # ');
 console.log('Cleaning the folders');
 cleanFolder();
 
-console.log('Making sure CSS folder exists');
+console.log('Creating CSS folder');
 cssFolder();
 
 console.log(' # # # END cleanup.js # # # ');
@@ -40,28 +40,30 @@ function cleanFolder(){
     //console.log(err);
   }
 
-  // Make sur CSS folder present
-  console.log(`\n ~ ~ ~ Deleting & Creating:  ~ ~ ~ \n\tCSS folder ${localPathCSS}`)
+  // Deleting CSS Folder
+  console.log(`\n ~ ~ ~ Checking & Deleting:  ~ ~ ~ \n\tCSS folder ${localPathCSS}`)
   try {
-    fs.accessSync(localPathCSS + 'style.css', fs.F_OK);
-    console.log(`file ${localPathCSS}style.css exists already.`);
-    console.log("Let's deleted it");
-
-    //file exists
+    fs.accessSync(localPathCSS, fs.F_OK);
+    console.log(`${localPathCSS} already exists`);
+    //Folder exists so let's delete it
     try {
-      fs.unlinkSync(localPathCSS + 'style.css');
-      console.log(`successfully deleted ${localPathCSS}style.css`);
+      fs.rmdirSync(localPathCSS, {recursive: true} );
+
+      console.log(`${localPathCSS} is deleted!`);
     } catch (err) {
-      console.log(err);
+      console.log(`Couldn't delete ${localPathCSS}`);
+      throw err;
     }
 
   } catch (err) {
-    console.log(`file ${localPathCSS}style.css does not exist.`);
+    // Folder does not exist so ok
+    console.log(`${localPathCSS} does not exist`);
   }
 }
 
 function cssFolder(){
   if (!fs.existsSync(localPathCSS)){
     fs.mkdirSync(localPathCSS);
+    console.log(`${localPathCSS} created.`)
   }
 }

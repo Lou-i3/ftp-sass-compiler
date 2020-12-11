@@ -22,13 +22,15 @@ function sassEncoding() {
     var result = sass.renderSync({  file: localPathSASS + 'style.scss',
                                     outFile: localPathCSS + 'style.css',
                                     outputStyle: 'expanded',
+                                    sourceMap: true,
                                 });
 
     // No errors during the compilation, write this result on the disk
     console.log('Converted to css');
     try {
       fs.writeFileSync(localPathCSS + 'style.css', result.css);
-      console.log(`file '${localPathCSS}style.css' written on disk`);
+      fs.writeFileSync(localPathCSS + 'style.css.map', result.map);
+      console.log(`files '${localPathCSS}style.css' & '${localPathCSS}style.css.map' written on disk`);
     } catch (err) {
       console.log('Error while writing file');
       throw err;
