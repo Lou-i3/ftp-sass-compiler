@@ -11,26 +11,33 @@ const localPathCSS = localPath + "css/";
 
 console.log('\n # # # convert.js # # # ');
 
-console.log('Converting to css and writing file style.css');
-sassEncoding();
+console.log('Converting to css and writing expanded files');
+sassEncoding('expanded');
+
+console.log('Converting to css and writing compressed files');
+sassEncoding('compressed');
 
 console.log(' # # # END convert.js # # # ');
 
-function sassEncoding() {
-
+function sassEncoding(outputStyle) {
+  if ( outputStyle == 'expanded' ) {
+    pathCSS = localPathCSS + 'style.css';
+  } else if ( outputStyle == 'compressed' ) {
+    pathCSS = localPathCSS + 'min/style.min.css';
+  }
   try {
     var result = sass.renderSync({  file: localPathSASS + 'style.scss',
-                                    outFile: localPathCSS + 'style.css',
-                                    outputStyle: 'expanded',
+                                    outFile: pathCSS,
+                                    outputStyle: outputStyle,
                                     sourceMap: true,
                                 });
 
     // No errors during the compilation, write this result on the disk
     console.log('Converted to css');
     try {
-      fs.writeFileSync(localPathCSS + 'style.css', result.css);
-      fs.writeFileSync(localPathCSS + 'style.css.map', result.map);
-      console.log(`files '${localPathCSS}style.css' & '${localPathCSS}style.css.map' written on disk`);
+      fs.writeFileSync( pathCSS , result.css);
+      fs.writeFileSync( pathCSS + '.map', result.map );
+      console.log(`files '${pathCSS}' & '${pathCSS}.map' written on disk`);
     } catch (err) {
       console.log('Error while writing file');
       throw err;

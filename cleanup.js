@@ -65,5 +65,7 @@ function cssFolder(){
   if (!fs.existsSync(localPathCSS)){
     fs.mkdirSync(localPathCSS);
     console.log(`${localPathCSS} created.`)
+    fs.mkdirSync(localPathCSS+'min/');
+    console.log(`${localPathCSS}min/ created.`)
   }
 }
