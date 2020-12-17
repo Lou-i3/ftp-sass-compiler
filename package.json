@@ -8,6 +8,7 @@
   "author": "LnWS",
   "dependencies": {
     "basic-ftp": "^4.6.3",
+    "rimraf": "^3.0.2",
     "sass": "^1.30.0"
   }
 }

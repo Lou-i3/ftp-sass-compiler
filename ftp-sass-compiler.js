@@ -17,7 +17,9 @@ clean.deleteFiles();
 clean.createFiles();
 
 ftp.download().then(()=>{
-  sass.sassEncoding('compressed');
-  sass.sassEncoding('expanded');
+  sass.sassEncoding('compressed')
+}).then( () => {
+  sass.sassEncoding('expanded')
+}).then( () => {
   ftp.upload();
 });
