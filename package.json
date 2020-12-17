@@ -1,9 +1,9 @@
 {
   "name": "ftp-sass-compiler",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "get sass files from ftp compile to css and ftp back",
   "scripts": {
-    "go": "node cleanup.js && node download.js && node convert.js && node upload.js"
+    "go": "node ftp-sass-compiler.js"
   },
   "author": "LnWS",
   "dependencies": {

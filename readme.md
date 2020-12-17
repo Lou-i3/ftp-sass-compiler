@@ -1,6 +1,16 @@
 # FTP SASS Compiler
 
-get sass files from ftp compile to css and ftp back
+Get sass files from ftp compile to css and ftp back
+
+Customizable:
+ * host
+ * user
+ * password
+ * theme-folder name
+
+Using config.txt file (see config_example.txt for layout).
+
+Distant location for files: "www/wp-content/themes/[themeFolder]/assets/"
 
 ## Dependencies
 
@@ -9,7 +19,7 @@ get sass files from ftp compile to css and ftp back
 ## Install
 
 1. Rename config_example.txt to config.txt
-2. Replace "[value]" by your value
+2. Replace "[value]" by your values
 
 ## Usage
 

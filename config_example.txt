@@ -1,8 +1,8 @@
 # Config info for ftp-sass-compiler
-# change [value] by the correct value and rename config_example.txt to config.txt
+# change [value] (do not keep the []) by the correct value and save as config.txt
 # /!\ Do not change anything else than [value]
 #
-# Name of the theme folder (path used: "www/wp-content/themes/[themeFolder]/assets/)
+# Name of the theme folder (path used: "www/wp-content/themes/[themeFolder]/assets/")
 theme: [value]
 #
 # Credentials for the ftp connection
