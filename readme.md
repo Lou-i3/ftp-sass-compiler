@@ -1,6 +1,6 @@
 # FTP SASS Compiler
 
-Get sass files from ftp compile to css and ftp back
+Get sass files from ftp or sftp compile to css and ftp/sftp back
 
 Customizable:
  * host
@@ -10,7 +10,7 @@ Customizable:
 
 Using config.txt file (see config_example.txt for layout).
 
-Distant location for files: "www/wp-content/themes/[themeFolder]/assets/"
+Distant location for files: "www/wp-content/themes/[themeFolder]/assets/" -> changed, now included in config.txt
 
 ## Dependencies
 

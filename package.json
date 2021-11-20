@@ -9,6 +9,7 @@
   "dependencies": {
     "basic-ftp": "^4.6.3",
     "rimraf": "^3.0.2",
-    "sass": "^1.30.0"
+    "sass": "^1.30.0",
+    "ssh2-sftp-client": "^7.1.0"
   }
 }

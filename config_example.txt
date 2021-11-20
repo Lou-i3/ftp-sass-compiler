@@ -2,10 +2,13 @@
 # change [value] (do not keep the []) by the correct value and save as config.txt
 # /!\ Do not change anything else than [value]
 #
-# Name of the theme folder (path used: "www/wp-content/themes/[themeFolder]/assets/")
-theme: [value]
+# Path to sass & css folders (relative to the root of the server)
+remotePath: www/wp-content/themes/[themeFolder]/assets/
 #
 # Credentials for the ftp connection
 host: [value]
 user: [value]
 password: [value]
+#
+# If the connection is secured (sftp) put true, else put false
+sftp: false
